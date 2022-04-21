@@ -1,0 +1,44 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.kozepre {
+    text-align: center;
+}
+article {
+    max-width: 800px;
+    margin: auto;
+}
+
+.tablazat th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+.tablazat tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tablazat td {
+    height: 30px;
+    margin: 50px;
+    text-align: center;
+
+}

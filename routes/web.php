@@ -25,6 +25,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__ . '/auth.php';
+Route::get('/api/szakdogak', [SzakdogaController::class, 'index']);
+Route::post('/api/szakdogak', [SzakdogaController::class, 'create']);
+Route::put('/api/szakdogak/{id}', [SzakdogaController::class, 'update']);
+Route::delete('/api/szakdogak/{id}', [SzakdogaController::class, 'destroy']);
 
 require __DIR__ . '/auth.php';

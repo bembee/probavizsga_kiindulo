@@ -11,20 +11,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
     <link rel="stylesheet" href="./css/kezdooldal.css">
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="./js/dogaklistazasa.js" type="module"></script>
+    <script src="js/Ajax.js"></script>
+    <script src="js/szakdoga.js"></script>
 </head>
 
 <body class="antialiased">
-
-
     <main>
-
         <header>
             <h1 class="kozepre">Számalk-Szalézi technikum és Szakgimnázium 2020-2022 évfolyam szoftverfejlesztőinek szakdolgozatai</h1>
         </header>
@@ -36,7 +34,6 @@
                 <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Szakdolgozatok</a>
                 @else
                 <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Bejelentkezés</a>
-
                 @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Regisztráció</a>
                 @endif
@@ -46,47 +43,26 @@
             @endif
         </section>
         <article>
-            <div class="galeria">
-                <img src="./kepek/kep_11.png" alt="Szakdolgozat kép">
+            <div class="tablazat">
             </div>
-            <div class="galeria">
-                <img src="./kepek/kep_1.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_2.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_8.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_3.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_10.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_4.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_5.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_6.png" alt="Szakdolgozat kép">
-            </div>
-
-
-
-
-
-
-            <div class="galeria">
+            <div class="urlap">
+                <form action="">
+                    <label for="sz_cim">Szakdolgozat címe</label><br>
+                    <input type="text" id="sz_cim" name="sz_cim"><br>
+                    <label for="k_nev">Készítők neve</label><br>
+                    <input type="text" id="k_nev" name="k_nev" ><br><br>
+                    <label for="o_eler">Az oldal elérhetősge</label><br>
+                    <input type="text" id="o_eler" name="o_eler" ><br><br>
+                    <label for="g_eler">Github elérhetősége</label><br>
+                    <input type="text" id="g_eler" name="g_eler"><br><br>
+                    <input type="submit" value="Új">
+                </form>
             </div>
         </article>
         <footer class="kozepre">
             Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
         </footer>
     </main>
-    </div>
     </div>
 </body>
 
